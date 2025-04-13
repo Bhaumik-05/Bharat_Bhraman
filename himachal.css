@@ -1,0 +1,96 @@
+/* ---------- Global Styling ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f4f7;
+    color: #333;
+}
+
+/* Title Banner Image - Compact */
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.title img.banner {
+    width: 30%;            /* only take 80% of page width */
+    max-width: 700px;      /* never get wider than 700px */
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;   /* optional – gives soft rounded corners */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* soft shadow */
+}
+
+
+/* ---------- Grid Layout for Cards ---------- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+}
+
+/* ---------- Gallery Cards ---------- */
+.gallery {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    gap: 20px;
+}
+
+/* ---------- Image Styling ---------- */
+.gallery img {
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+/* ---------- Text Section ---------- */
+.desc {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* List Styling */
+.desc ul,
+.desc ol {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.desc li {
+    margin-bottom: 8px;
+}
+
+/* ---------- Responsive Styling ---------- */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery img {
+        width: 100%;
+    }
+
+    .desc {
+        text-align: left;
+        padding-top: 10px;
+    }
+}
