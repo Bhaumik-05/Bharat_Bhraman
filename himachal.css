@@ -5,9 +5,10 @@ body {
     padding: 0;
     background-color: #f2f4f7;
     color: #333;
+    padding-top: 70px; /* Prevent overlap with fixed navbar */
 }
 
-/* Title Banner Image */
+/* ---------- Title Banner Image ---------- */
 .title {
     width: 100%;
     display: flex;
@@ -22,26 +23,18 @@ body {
     height: auto;
     object-fit: contain;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* ---------- Grid Layout for Cards ---------- */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Fixed 2-column layout on large screens */
+    grid-template-columns: 1fr 1fr; /* 2 columns on large screens */
     gap: 30px;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto 50px auto;
 }
-
-/* Responsive for phones */
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
-    }
-}
-
 
 /* ---------- Gallery Cards ---------- */
 .gallery {
@@ -84,4 +77,48 @@ body {
 
 .desc li {
     margin-bottom: 8px;
+}
+
+/* ---------- Responsive Styling ---------- */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .gallery img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .desc {
+        padding-top: 10px;
+        text-align: left;
+    }
+}
+
+/* Phones (≤600px) */
+@media (max-width: 600px) {
+    .title {
+        margin: 10px 0;
+    }
+
+    .grid-container {
+        gap: 20px;
+    }
+
+    .gallery {
+        padding: 15px;
+    }
+
+    .desc {
+        font-size: 15px;
+    }
 }
