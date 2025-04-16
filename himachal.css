@@ -7,7 +7,7 @@ body {
     color: #333;
 }
 
-/* Title Banner Image - Compact */
+/* Title Banner Image */
 .title {
     width: 100%;
     display: flex;
@@ -79,9 +79,12 @@ body {
 }
 
 /* ---------- Responsive Styling ---------- */
-@media (max-width: 768px) {
+
+/* Tablets (Portrait and Landscape) */
+@media (max-width: 1024px) {
     .gallery {
         flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
@@ -91,18 +94,19 @@ body {
     }
 
     .desc {
-        text-align: left;
         padding-top: 10px;
+        text-align: left;
     }
 }
 
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-
+/* Phones */
+@media (max-width: 600px) {
     .title {
         margin: 10px 0;
+    }
+
+    .grid-container {
+        gap: 20px;
     }
 
     .gallery {
