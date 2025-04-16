@@ -1,91 +1,92 @@
-.hero {
-    text-align: center; /* Center align text */
-    padding: 50px 20px; /* Add spacing around the content */
-    background-color: #f8f8f8; /* Light background for contrast */
-}
-
-.hero h1 {
-    font-size: 2.8rem; /* Larger, eye-catching title */
-    font-weight: bold; /* Make it stand out */
-    color: #333; /* Darker color for readability */
-    margin-bottom: 10px; /* Space between heading and paragraph */
-}
-
-.hero p {
-    font-size: 1.4rem; /* Slightly larger for emphasis */
-    color: #555; /* Softer contrast for readability */
-    max-width: 800px; /* Prevent overly wide text */
-    margin: 0 auto; /* Center paragraph */
-    line-height: 1.6; /* Improve readability */
-}
-
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    gap: 20px; /* Space between items */
-    justify-items: center;
-}
-
-.gallery img {
-    width: 100%; /* Ensures images take full width of container */
-    height: 250px; /* Set a fixed height to match Ladakh */
-    object-fit: cover; /* Ensures images crop to fit without distortion */
-    max-width: 300px; /* Adjust width as needed */
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-.desc {
-    margin-top: 10px;
-    font-style: italic;
-    color: #2d6a4f;
-}
-.desc:hover{
-    color: #52b788;
-}
+/* Make image container responsive */
 .image-container {
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.image-container img {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive gallery grid */
+@media (max-width: 1024px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .gallery img {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+/* Responsive nav */
+nav {
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+}
+
+.nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    gap: 10px;
+}
+
+.search-bar {
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px; 
-    margin-top: 20px;
+    margin-top: 10px;
 }
-.image-container img {
-    max-width: 48%; 
-    max-height: 90vh;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+.search-bar input {
+    width: 90%;
+    max-width: 400px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
-.footer{
-    padding: 20px;
+
+/* Footer responsiveness */
+.footer {
+    font-size: 12px;
+    padding: 15px;
     text-align: center;
-    font-size: 14px;
-    color: #e5e5e5;
-    border-top: 1px solid #dee2e6;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-}
-.footer p {
-    margin: 0;
-}
-.footer p:hover{
-    color: #ade8f4;
 }
 
-.footer a {
-    color: #e5e5e5;
-    text-decoration: none;
-}
-.footer a:hover {
-    color: #ade8f4;
+.footer ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
 }
 
+.social-media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
