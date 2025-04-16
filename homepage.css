@@ -46,40 +46,26 @@
     font-style: italic;
     color: #2d6a4f;
 }
+
 .desc:hover {
     color: #52b788;
 }
 
-/* ✅ Fixed Responsive Image Container */
+/* image container responsive based on device */
 .image-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 15px;
-    margin-top: 20px;
-    padding: 0 10px;
+    margin: 30px 20px;
     box-sizing: border-box;
 }
 
 .image-container img {
     width: 100%;
-    flex: 1 1 100%;
+    height: auto;
     border-radius: 20px;
     object-fit: cover;
-    height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-@media (min-width: 600px) {
-    .image-container img {
-        flex: 1 1 calc(48% - 10px);
-    }
-}
-
-@media (min-width: 900px) {
-    .image-container img {
-        flex: 1 1 calc(30% - 10px);
-    }
 }
 
 /* Footer */
