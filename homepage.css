@@ -21,7 +21,7 @@
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     gap: 20px; /* Space between items */
     justify-items: center;
 }
