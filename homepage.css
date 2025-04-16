@@ -51,7 +51,7 @@
     color: #52b788;
 }
 
-/* ✅ Fixed Responsive Image Container */
+/* Responsive Image Container */
 .image-container {
     display: flex;
     flex-wrap: wrap;
@@ -100,8 +100,6 @@
 .footer a:hover {
     color: #ade8f4;
 }
-
-/* Optional Media Queries (Tweak layout if needed) */
 @media screen and (max-width: 768px) {
     .image-container {
         flex-direction: column;
