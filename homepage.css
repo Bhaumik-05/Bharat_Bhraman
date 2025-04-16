@@ -56,19 +56,23 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 15px;
     margin-top: 20px;
     padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .image-container img {
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
+    flex: 1 1 300px;
     height: auto;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Footer */
 .footer {
