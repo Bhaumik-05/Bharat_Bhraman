@@ -13,22 +13,22 @@ body {
     display: flex;
     justify-content: center;
     margin: 20px 0;
+    padding: 0 15px;
 }
 
 .title img.banner {
-    width: 30%;            /* only take 80% of page width */
-    max-width: 700px;      /* never get wider than 700px */
+    width: 100%;
+    max-width: 700px;
     height: auto;
     object-fit: contain;
-    border-radius: 12px;   /* optional – gives soft rounded corners */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* soft shadow */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
 
 /* ---------- Grid Layout for Cards ---------- */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     width: 90%;
     max-width: 1200px;
@@ -38,12 +38,14 @@ body {
 /* ---------- Gallery Cards ---------- */
 .gallery {
     display: flex;
+    flex-direction: row;
     align-items: center;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     padding: 20px;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 /* ---------- Image Styling ---------- */
@@ -54,6 +56,7 @@ body {
     object-fit: contain;
     border-radius: 10px;
     background-color: #fff;
+    flex-shrink: 0;
 }
 
 /* ---------- Text Section ---------- */
@@ -61,6 +64,7 @@ body {
     flex: 1;
     font-size: 16px;
     line-height: 1.6;
+    min-width: 200px;
 }
 
 /* List Styling */
@@ -76,10 +80,6 @@ body {
 
 /* ---------- Responsive Styling ---------- */
 @media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-
     .gallery {
         flex-direction: column;
         text-align: center;
@@ -87,10 +87,29 @@ body {
 
     .gallery img {
         width: 100%;
+        max-width: 100%;
     }
 
     .desc {
         text-align: left;
         padding-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .title {
+        margin: 10px 0;
+    }
+
+    .gallery {
+        padding: 15px;
+    }
+
+    .desc {
+        font-size: 15px;
     }
 }
